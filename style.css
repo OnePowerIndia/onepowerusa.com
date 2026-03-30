@@ -1,0 +1,20 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+
+#map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 75%;
+
+  /* TODO : make responsive with the message thats there already
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  */
+}
