@@ -1,20 +1,164 @@
-html,
-body {
-  margin: 0;
-  height: 100%;
+/* ONE POWER USA — layout & theme */
+
+:root {
+  --op-bg: #f4f7f5;
+  --op-surface: #ffffff;
+  --op-text: #1a2332;
+  --op-muted: #5c6b7a;
+  --op-accent: #0d7a5c;
+  --op-accent-dark: #095c45;
+  --op-hero-overlay: rgba(12, 32, 28, 0.72);
+  --op-radius: 0.75rem;
+  --op-shadow: 0 0.25rem 1.25rem rgba(26, 35, 50, 0.08);
+  /* Single column: hero, intro, section titles, and lists share the same width */
+  --op-content-measure: min(48rem, 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--op-text);
+  background: var(--op-bg);
+  line-height: 1.6;
+}
+
+.site-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: var(--op-content-measure);
+  margin-inline: auto;
+}
+
+.site-header a {
+  color: var(--op-text) !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-header a:hover {
+  color: var(--op-accent) !important;
+}
+
+.site-title {
+  font-size: clamp(1.65rem, 4.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Hero: readable text over photo */
+.hero-banner {
+  position: relative;
+  border-radius: var(--op-radius);
+  overflow: hidden;
+  min-height: min(52vh, 28rem);
+  max-width: var(--op-content-measure);
+  margin-inline: auto;
+  background-color: #0c201c;
+  background-image: linear-gradient(135deg, #0c201c 0%, #134d3d 100%);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--op-shadow);
+}
+
+.hero-banner.has-image {
+  background-image: url("./images/banner-road.png");
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    var(--op-hero-overlay) 0%,
+    rgba(12, 32, 28, 0.55) 55%,
+    rgba(12, 32, 28, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+.hero-heading {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: #f8faf9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.25;
+}
+
+.hero-inner .btn-primary {
+  --bs-btn-bg: var(--op-accent);
+  --bs-btn-border-color: var(--op-accent);
+  --bs-btn-hover-bg: var(--op-accent-dark);
+  --bs-btn-hover-border-color: var(--op-accent-dark);
+  --bs-btn-active-bg: var(--op-accent-dark);
+  --bs-btn-active-border-color: var(--op-accent-dark);
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.content-section {
+  margin-bottom: 2.5rem;
+  max-width: var(--op-content-measure);
+  margin-inline: auto;
+}
+
+.content-section:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--op-accent-dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid rgba(13, 122, 92, 0.25);
+}
+
+.lead.intro {
+  font-size: 1.125rem;
+  color: var(--op-text);
+  max-width: none;
+}
+
+.list-group-item {
+  border-color: rgba(26, 35, 50, 0.1);
+  padding: 1rem 1.15rem;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: var(--op-radius);
+  border-top-right-radius: var(--op-radius);
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: var(--op-radius);
+  border-bottom-right-radius: var(--op-radius);
+}
+
+.site-footer {
+  font-size: 0.9rem;
+  color: var(--op-muted);
+  line-height: 1.5;
+  max-width: var(--op-content-measure);
+  margin-inline: auto;
+}
 
 #map {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 75%;
-
-  /* TODO : make responsive with the message thats there already
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  */
 }
