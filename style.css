@@ -16,9 +16,9 @@
   --op-heading-panel-border: rgba(26, 45, 58, 0.1);
   --op-heading-panel-shadow: 0 0.125rem 0.5rem rgba(26, 35, 50, 0.1);
   /* Hero: blue-teal layers that let the body ocean show through */
-  --op-hero-blend-a: rgba(20, 58, 72, 0.78);
-  --op-hero-blend-b: rgba(42, 98, 118, 0.62);
-  --op-hero-blend-c: rgba(88, 152, 168, 0.45);
+  --op-hero-blend-a: rgba(255, 247, 153, 0.78);   /* lemon yellow */
+  --op-hero-blend-b: rgba(51, 230, 219, 0.62);    /* turquoise */
+  --op-hero-blend-c: rgba(255, 137, 185, 0.60);   /* pink */
 }
 
 html {
