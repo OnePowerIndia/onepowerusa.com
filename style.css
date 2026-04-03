@@ -12,6 +12,9 @@
   --op-shadow: 0 0.25rem 1.25rem rgba(26, 35, 50, 0.08);
   /* Single column: hero, intro, section titles, and lists share the same width */
   --op-content-measure: min(48rem, 100%);
+  --op-heading-panel-bg: rgba(248, 250, 249, 0.94);
+  --op-heading-panel-border: rgba(26, 35, 50, 0.12);
+  --op-heading-panel-shadow: 0 0.125rem 0.5rem rgba(26, 35, 50, 0.12);
 }
 
 html {
@@ -39,6 +42,8 @@ body {
 }
 
 .site-header a {
+  display: inline-flex;
+  align-items: center;
   color: var(--op-text) !important;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -92,12 +97,25 @@ body {
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem);
 }
 
+.hero-heading-panel {
+  padding: 1rem 1.15rem;
+  max-width: 100%;
+  background-color: var(--op-heading-panel-bg);
+  border: 1px solid var(--op-heading-panel-border);
+  border-radius: var(--op-radius);
+  box-shadow: var(--op-heading-panel-shadow);
+}
+
 .hero-heading {
   font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-weight: 500;
-  color: #f8faf9;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: var(--op-text);
+  text-shadow: none;
   line-height: 1.25;
+}
+
+.hero-tagline {
+  color: var(--op-muted);
 }
 
 .hero-inner .btn-primary {
@@ -123,12 +141,18 @@ body {
 }
 
 .section-title {
+  display: inline-block;
+  max-width: 100%;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--op-accent-dark);
   margin-bottom: 1rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid rgba(13, 122, 92, 0.25);
+  padding: 0.5rem 0.85rem 0.55rem;
+  background-color: var(--op-heading-panel-bg);
+  border: 1px solid var(--op-heading-panel-border);
+  border-radius: 0.5rem;
+  border-bottom: 2px solid rgba(13, 122, 92, 0.35);
+  box-shadow: var(--op-heading-panel-shadow);
 }
 
 .lead.intro {
