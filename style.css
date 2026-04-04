@@ -69,7 +69,7 @@ body {
   position: relative;
   border-radius: var(--op-radius);
   overflow: hidden;
-  min-height: min(38vh, 22rem);
+  min-height: min(30vh, 17rem);
   max-width: var(--op-content-measure);
   margin-inline: auto;
   background-color: transparent;
